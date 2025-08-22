@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+     <html lang="fr">
+     <head>
+       <meta charset="UTF-8">
+       <title>Article 1 - Journal 1</title>
+       <link rel="stylesheet" href="/styles.css">
+       <script src="https://unpkg.com/lunr/lunr.js"></script>
+     </head>
+     <body>
+       <nav>
+         <ul>
+           <li><a href="/">Accueil</a></li>
+           <li><a href="/articles">Articles</a></li>
+           <li><a href="/a-propos">À propos</a></li>
+           <li><a href="mailto:redaction@epco.cm">Contact</a></li>
+           <li><input type="text" id="search-input" placeholder="Rechercher..."></li>
+         </ul>
+       </nav>
+       <h1>Premier Article</h1>
+       <p>Ceci est le contenu du premier article.</p>
+       <div id="search-results"></div>
+       <script src="/search.js"></script>
+       <script>
+         document.getElementById('search-input').addEventListener('input', function(e) {
+           const query = e.target.value;
+           const results = search(query);
+           const resultsDiv = document.getElementById('search-results');
+           resultsDiv.innerHTML = results.map(r => `<a href="${r.url}">${r.title}</a>`).join('<br>');
+         });
+       </script>
+     </body>
+     </html>
