@@ -1,6 +1,7 @@
 const documents = [
        { id: 1, title: "Accueil", content: "Ceci est la page d'accueil de mon journal", url: "/" },
-       { id: 2, title: "Articles", content: "Liste des articles à venir", url: "/articles/" }
+       { id: 2, title: "Articles", content: "Liste des articles à venir", url: "/articles/" },
+       { id: 3, title: "Premier Article", content: "Ceci est le contenu du premier article", url: "/articles/article1.html" }
      ];
      const idx = lunr(function () {
        this.ref('id');
